@@ -25,6 +25,7 @@ const Shirt = () => {
   let resultData = []
 
   if(availabilities.length > 2) {
+    // eslint-disable-next-line array-callback-return
     resultData = sortedProducts.map(product => {
       if(product.manufacturer === 'abiplos'){
         const matchedItems = availabilities && availabilities[0].filter(item => item.id.toLowerCase() === product.id)
@@ -51,9 +52,6 @@ const Shirt = () => {
       return statusInfo.join('')
     }
   }
-  const localStorageShirts = localStorage.setItem('Shirt', JSON.stringify(resultData))
-  console.log('localstorage', localStorageShirts)
-
 
   return (
     <div>

@@ -18,7 +18,7 @@ function useAvailabilities() {
         const c = await cc.json()
         const d = await dd.json()
         const e = await ee.json()
-        return [a.response, b.response, c.response, d.response, e.response]
+        return await [a.response, b.response, c.response, d.response, e.response]
       })
       .then(result => {
         setAvailabilities(result)

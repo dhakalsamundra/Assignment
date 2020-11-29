@@ -19,7 +19,6 @@ const Jacket = () => {
   const classes = useStyles()
 
   const sortedProducts = products.sort((a, b) => (a.manufacturer > b.manufacturer) ? 1 : -1)
-  console.log('afadfdafea', availabilities)
 
   let resultData = []
 
@@ -70,9 +69,6 @@ const Jacket = () => {
               </Typography>
               <Typography gutterBottom variant='h6'>
                   Brand: {jacket.manufacturer}
-              </Typography>
-              <Typography gutterBottom variant='h6'>
-                  TYPES: {jacket.type}
               </Typography>
               <Typography gutterBottom variant='h6'>
                   Status: {jacket.status}

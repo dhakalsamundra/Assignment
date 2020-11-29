@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Card, CardContent, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import EuroIcon from '@material-ui/icons/Euro'
@@ -22,6 +22,7 @@ const Shirt = () => {
 
   const sortedProducts = products.sort((a, b) => (a.manufacturer > b.manufacturer) ? 1 : -1)
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   let resultData = []
 
   if(availabilities.length > 2) {
@@ -52,6 +53,10 @@ const Shirt = () => {
       return statusInfo.join('')
     }
   }
+
+  useEffect(() => {
+    window.localStorage.setItem('Shirt', JSON.stringify(resultData))
+  }, [ resultData ])
 
   return (
     <div>

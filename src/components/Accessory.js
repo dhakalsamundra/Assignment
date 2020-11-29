@@ -25,7 +25,6 @@ const Accessory = () => {
   let resultData = []
 
   if(availabilities.length > 2) {
-    // eslint-disable-next-line array-callback-return
     resultData = sortedProducts.map(product => {
       if(product.manufacturer === 'abiplos'){
         const matchedItems = availabilities && availabilities[0].filter(item => item.id.toLowerCase() === product.id)
@@ -53,6 +52,8 @@ const Accessory = () => {
     }
   }
 
+  const localStorageAccessories = localStorage.setItem('Accessories', JSON.stringify(resultData))
+  console.log('localstorage', localStorageAccessories)
 
 
   return (

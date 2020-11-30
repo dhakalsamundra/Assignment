@@ -16,6 +16,7 @@ const Jacket = () => {
     'https://bad-api-assignment.reaktor.com/products/jackets'
   )
   const [ availabilities, isLoading, error ] = useAvailabilities()
+  console.log('availabilities', availabilities)
   const classes = useStyles()
 
   const sortedProducts = products.sort((a, b) => (a.manufacturer > b.manufacturer) ? 1 : -1)
@@ -58,8 +59,8 @@ const Jacket = () => {
 
   return (
     <div>
-      {errorMessage ? <h1>Error in fetching the product. Reload the page..</h1> : null}
-      {error ? <h1>Error in fetching the information from manufacturer. Reload the page..</h1> : null}
+      {errorMessage ? <h1 style={{ textAlign: 'center' }}>Error in fetching the product. Reload the page..</h1> : null}
+      {error ? <h1 style={{ textAlign: 'center' }}>Error in fetching the information from manufacturer. Reload the page..</h1> : null}
       {(isLoading || loading) ? (
         <Spinner />
       ) : (

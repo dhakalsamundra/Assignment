@@ -6,7 +6,7 @@ function useAvailabilities() {
   const [ error, setError ] = useState(null)
 
   useEffect(() => {
-    Promise.all([
+    return Promise.all([
       fetch('https://bad-api-assignment.reaktor.com/availability/abiplos'),
       fetch('https://bad-api-assignment.reaktor.com/availability/derp'),
       fetch('https://bad-api-assignment.reaktor.com/availability/nouke'),
@@ -21,8 +21,8 @@ function useAvailabilities() {
         const e = await ee.json()
         return await[a.response, b.response, c.response, d.response, e.response]
       })
-      .then(result => {
-        setAvailabilities(result)
+      .then( async (result) => {
+        await setAvailabilities(result)
         setIsLoading(false)
       })
       .catch(err => {

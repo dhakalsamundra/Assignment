@@ -16,7 +16,6 @@ const Jacket = () => {
     'https://bad-api-assignment.reaktor.com/products/jackets'
   )
   const [ availabilities, isLoading, error ] = useAvailabilities()
-  console.log('availabilities', availabilities)
   const classes = useStyles()
 
   const sortedProducts = products.sort((a, b) => (a.manufacturer > b.manufacturer) ? 1 : -1)

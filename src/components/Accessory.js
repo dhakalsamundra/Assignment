@@ -19,7 +19,6 @@ const Accessory = () => {
   const classes = useStyles()
 
   const [ availabilities, isLoading, error ] = useAvailabilities()
-  console.log('availabilities', availabilities)
 
   const sortedProducts = products.sort((a, b) => (a.manufacturer > b.manufacturer) ? 1 : -1)
 

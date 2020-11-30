@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 function useAvailabilities() {
   const [isLoading, setIsLoading] = useState(true)
   const [ availabilities, setAvailabilities ] = useState([])
+  const [ error, setError ] = useState(null)
 
   useEffect(() => {
     Promise.all([
@@ -26,12 +27,13 @@ function useAvailabilities() {
       })
       .catch(err => {
         console.log(err)
+        setError(err)
         setIsLoading(false)
       })
   }, [])
 
 
-  return [availabilities, isLoading]
+  return [availabilities, isLoading, error]
 }
 
 export default useAvailabilities

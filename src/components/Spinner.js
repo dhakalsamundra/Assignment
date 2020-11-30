@@ -7,7 +7,7 @@ const Spinner =  () => (
       src={spinner}
       style={{ width: '200px', margin: 'auto', display: 'block' }}
       alt='Loading...'
-    />
+    /><p style={{ textAlign: 'center' }}>Wait for 20-30 seconds.</p>
   </Fragment>
 )
 
